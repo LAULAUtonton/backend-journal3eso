@@ -17,23 +17,19 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Endpoint de prueba
 @app.get("/")
 def root():
     return {"status": "Backend running"}
 
-# GET: obtener grupos (por ahora vacío)
 @app.get("/api/groups")
 def get_groups():
     return []
 
-# MODELO para crear grupo
 class GroupCreate(BaseModel):
     group_name: str
     members: List[str]
     project_type: str
 
-# POST: crear grupo
 @app.post("/api/groups")
 def create_group(group: GroupCreate):
     return {
