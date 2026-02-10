@@ -5,7 +5,18 @@ from typing import List
 import uuid
 
 app = FastAPI()
+from fastapi.middleware.cors import CORSMiddleware
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://journal3eso.netlify.app",
+        "http://localhost:3000"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 # CORS: permitir frontend de Netlify
 app.add_middleware(
     CORSMiddleware,
