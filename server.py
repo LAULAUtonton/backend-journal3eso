@@ -10,7 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://journal3eso.netlify.app",
+        "https://backend-journal3eso.onrender.com",
         "http://localhost:3000"
     ],
     allow_credentials=True,
